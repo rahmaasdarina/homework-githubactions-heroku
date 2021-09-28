@@ -22,6 +22,10 @@ var followers = []DataFollowers{
 func main() {
 	app := fiber.New()
 
+	app.Get("/", func(c *fiber.Ctx) error {
+		return c.SendString("Hello, World 👋!")
+	})
+
 	app.Get("/follower", getDataFollower)
 	app.Get("/follower/:username", getDataFollowerByUsername)
 	app.Get("/:userId/detail", getDataFollowerById)

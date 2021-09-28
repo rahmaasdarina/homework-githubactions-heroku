@@ -1,6 +1,8 @@
 package main
 
 import (
+	"os"
+
 	"github.com/gofiber/fiber/v2"
 )
 
@@ -24,7 +26,7 @@ func main() {
 	app.Get("/follower/:username", getDataFollowerByUsername)
 	app.Get("/:userId/detail", getDataFollowerById)
 
-	app.Listen(":3000")
+	app.Listen(":" + os.Getenv("PORT"))
 
 }
 

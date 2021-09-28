@@ -25,6 +25,7 @@ func main() {
 	app.Get("/:userId/detail", getDataFollowerById)
 
 	app.Listen(":3000")
+
 }
 
 func getDataFollower(c *fiber.Ctx) error {

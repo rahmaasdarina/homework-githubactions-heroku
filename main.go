@@ -55,6 +55,7 @@ func getDataFollowerByUsername(c *fiber.Ctx) error {
 	return c.Status(fiber.StatusNotFound).JSON(fiber.Map{"error": "Record not found"})
 }
 
+//GetDataFollowerById
 func getDataFollowerById(c *fiber.Ctx) error {
 	userId := c.Params("userId")
 

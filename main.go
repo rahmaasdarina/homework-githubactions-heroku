@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"os"
 
 	"github.com/gofiber/fiber/v2"
@@ -30,7 +31,11 @@ func main() {
 	app.Get("/follower/:username", getDataFollowerByUsername)
 	app.Get("/:userId/detail", getDataFollowerById)
 
-	app.Listen(":" + os.Getenv("PORT"))
+	// app.Listen(":" + os.Getenv("PORT"))
+	err := app.Listen(":" + os.Getenv("PORT"))
+	if err != nil {
+		fmt.Print("error")
+	}
 
 }
 
